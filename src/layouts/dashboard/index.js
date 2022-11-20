@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-// import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid";
 
 // Material Dashboard 2 React components
 // import MDBox from "components/MDBox";
@@ -23,6 +23,7 @@ Coded by www.creative-tim.com
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
+import Button from "@mui/material/Button";
 // import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 // import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 // import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
@@ -37,10 +38,20 @@ import Footer from "examples/Footer";
 
 function Dashboard() {
   // const { sales, tasks } = reportsLineChartData;
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
-
+      <Grid container spacing={3} justifyContent="center" alignItems="center">
+        <Grid item xs={4}>
+          <Button variant="contained" onClick={() => openInNewTab("http://localhost:1234")}>
+            Dial in
+          </Button>
+        </Grid>
+      </Grid>
       <Footer />
     </DashboardLayout>
   );
